@@ -58,8 +58,7 @@ exports.getProducts = asyncHandler(async (req, res, next) => {
 
   const filteredApiFeature = new ApiFeatures(
     Product.find().sort(sortBy),
-    req.query
-  )
+    req.query)
     .search()
     .filter();
 
@@ -140,7 +139,6 @@ exports.updateProduct = asyncHandler(async (req, res, next) => {
       }
     }
   }
-
   res.status(201).json({ success: true, product });
 });
 
